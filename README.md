@@ -19,6 +19,6 @@
 
 5) You can use test users to test application:
 
-login: 1, password: 1
+    login: 1, password: 1
 
-login: 2, password: 2 
+    login: 2, password: 2 
