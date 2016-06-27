@@ -2,6 +2,10 @@ var mongoose = require('mongoose');
 
 // define model =================
 module.exports = mongoose.model('Todo', {
+  id: {
+    type: String,
+    default: ''
+  },
   description: {
     type: String,
     default: ''

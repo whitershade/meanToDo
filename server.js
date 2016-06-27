@@ -61,6 +61,7 @@ app.post('/api/todos', function (req, res) {
   // create a todo, information comes from AJAX request from Angular
   //  console.log(req.body);
   Todo.create({
+    id: req.body.id,
     description: req.body.description,
     done: req.body.done,
     deleted: req.body.deleted,

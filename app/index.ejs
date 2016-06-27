@@ -50,7 +50,8 @@
   <main>
     <div class="container">
       <div ng-app="toDoList">
-        <div ng-controller="MainController">
+        <div ng-controller="MainController"
+             ng-model="user.id">
           <!-- Display current date -->
           <current-date></current-date>
           <div ng-controller="PieCtrl" class="pieTask">
@@ -82,12 +83,14 @@
 	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
 	<script src="libs/respond/respond.min.js"></script>
 	<![endif]-->
-
+  <script>
+    window.appinit = { id: <%= user.local.email %> }
+  </script>
   <!-- build:js js/main.js -->
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/Chart.js/dist/Chart.min.js"></script>
   <script src="bower_components/tc-angular-chartjs/dist/tc-angular-chartjs.min.js"></script>
-  <script src="js/script-complied.js"></script>
+  <script src="js/common.js"></script>
   <!-- endbuild -->
 
 </html>

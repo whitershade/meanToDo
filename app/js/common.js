@@ -12,11 +12,13 @@
       statistic: false, // показывать / скрывать статистику
       tasks: [ // массив для хранения задач
         //    { description: '1', deleted: false, done: false, hide: false, onchange: false } --> так выглядит объект типа "задача", хранящийся в массиве
-      ]
+      ],
+      userId: ''
     }) // глобальные переменные
     /* Контроллер для инициализации глобальных переменных приложения */
-    .controller('MainController', ['saveFactory', function (saveFactory) {
+    .controller('MainController', ['saveFactory', 'appValues', '$scope', function (saveFactory, appValues, $scope) {
       saveFactory.loadFromLocalStorage();
+      appValues.userId = window.appinit.id + '';
     }])
     /* сервис для сохранения и загрузки данных в/из local storage, 
     также при каждой манипуляции посылает broadcast о том, что было совершено изменение в tasks */
@@ -63,7 +65,9 @@
             })
             appValues.tasks.splice(0, appValues.tasks.length);
             newValue.forEach(function (item) {
-              appValues.tasks.push(item);
+              if (item.id === appValues.userId) {
+                appValues.tasks.push(item);
+              }
             });
             tasksChanged.broadcast();
             console.log("load from database");
@@ -124,12 +128,14 @@
           this.hideToggle = appValues.hideToggle; // задаем текущее значение hideToggle
           this.addNewTask = function (descr) { // добавляем новую задачу, на вход подается содержаение задачи
             appValues.tasks.push({ // в массив задач добавляется новый объект с
+              id: appValues.userId,
               description: descr || '', //полученным при вызове функции описанием
               deleted: false, // задача не удалена
               done: false, // не выполнена
               hide: false, // не скрыта
               onchange: false // не изменяется в текущий момент
             });
+            console.log(appValues.tasks);
             saveFactory.addNewTaskInMD();
             saveFactory.tasksChangedBroadcast(); // сохранить изменения в local storage
           };
