@@ -1,0 +1,19 @@
+<ul class="output-area">
+  <li class="clearfix output"
+     id = "{{ task._id }}"
+     ng-class="{ done: task.done, deleted: task.deleted, hide: task.hide }" 
+     ng-repeat="task in taskCtrl.tasks">
+    <label class="out-label">
+      <input type="text" class="out-input" 
+        ng-class="{ hide: !task.onchange }" 
+        ng-init="input = task.description" 
+        ng-blur="taskCtrl.changeTask(task, input)" 
+        ng-model="input">
+      <span class="out-span" ng-class="{ hide: task.onchange }" ng-click="taskCtrl.changeTask(task)">{{task.description}}</span>
+    </label>
+    <div class="button-done" ng-click="taskCtrl.toggleDone(task)">&#10004;</div>
+    <div class="button-delete" ng-click="taskCtrl.deleteTask(task)">&#10006;</div>
+    <div class="button-finally-delete" ng-click="taskCtrl.finallyDeleteTask(task)">&#10006;</div>
+    <div class="button-return" ng-click="taskCtrl.returnTask(task)">&#8634;</div>
+  </li>
+</ul>

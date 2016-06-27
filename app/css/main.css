@@ -1,0 +1,379 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "RobotoRegular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/RobotoRegular/RobotoRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoRegular/RobotoRegular.woff") format("woff"), url("../fonts/RobotoRegular/RobotoRegular.ttf") format("truetype"); }
+
+body,
+html {
+  margin: 0;
+  padding: 0; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+  color: red; }
+
+body input:required:valid,
+body textarea:required:valid {
+  color: green; }
+
+body {
+  margin: 0;
+  font-size: 16px;
+  color: #000;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  overflow-x: hidden; }
+
+.date-text {
+  font-size: 1.875em;
+  margin-bottom: 20px;
+  font-weight: bold; }
+
+.main-header {
+  position: relative;
+  z-index: 10; }
+  .main-header p {
+    margin: 0;
+    font-weight: bold; }
+  .main-header .left-side,
+  .main-header .right-side {
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 3px solid #000; }
+  .main-header .left-side {
+    margin-right: -15px;
+    background: #000;
+    color: #FFF; }
+    .main-header .left-side p {
+      font-size: 3.4375em;
+      line-height: 60px; }
+  .main-header .right-side {
+    background: #FFF;
+    margin-left: -15px; }
+    .main-header .right-side p {
+      font-size: 5em;
+      line-height: 120px; }
+
+.done {
+  background: #64e464;
+  color: black; }
+  .done span {
+    text-decoration: line-through; }
+  .done input {
+    background: #64e464; }
+
+.input-area {
+  padding-bottom: 15px;
+  border-bottom: 2px solid green; }
+  .input-area input[name="what-to-do"] {
+    width: 90%;
+    border: 2px solid #000;
+    padding: 15px;
+    height: 50px; }
+
+.add-to-do,
+.hide-if-done,
+.show-deleted,
+.hide-deleted {
+  display: inline-block; }
+  .add-to-do svg,
+  .hide-if-done svg,
+  .show-deleted svg,
+  .hide-deleted svg {
+    width: 50px;
+    height: 50px; }
+  .add-to-do:hover,
+  .hide-if-done:hover,
+  .show-deleted:hover,
+  .hide-deleted:hover {
+    cursor: pointer; }
+
+.add-to-do svg {
+  transition: fill 0.3s ease; }
+
+.add-to-do:hover svg {
+  fill: green; }
+
+.hide-if-done svg {
+  transition: fill 0.2s ease;
+  fill: green;
+  transform: translateY(1px) scale(1.2); }
+
+.hide-if-done-button-red svg {
+  fill: red; }
+
+.show-deleted svg {
+  fill: #cd0000; }
+
+.hide-deleted {
+  display: none; }
+  .hide-deleted svg {
+    fill: green; }
+
+.output-area {
+  margin-top: 20px;
+  padding: 0; }
+  .output-area li {
+    display: block; }
+
+.output {
+  min-height: 71px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  transition: all 0.5s ease; }
+  .output label {
+    margin-top: 10px; }
+  .output input {
+    padding: 5px;
+    transition: background 0.5s ease; }
+    .output input.hide {
+      display: none; }
+  .output span {
+    padding: 5px;
+    display: block;
+    word-wrap: break-word; }
+    .output span.hide {
+      display: none; }
+  .output .button-delete,
+  .output .button-done,
+  .output .button-finally-delete,
+  .output .button-return {
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    float: right;
+    width: 25px;
+    height: 25px; }
+    .output .button-delete:hover,
+    .output .button-done:hover,
+    .output .button-finally-delete:hover,
+    .output .button-return:hover {
+      cursor: pointer; }
+  .output .button-delete {
+    margin-right: 10px;
+    color: red;
+    color: tomato;
+    border: 2px solid red; }
+  .output .button-finally-delete,
+  .output .button-return {
+    color: white;
+    border: 2px solid white; }
+  .output .button-return {
+    margin-right: 10px;
+    font-weight: bold; }
+  .output .button-done {
+    border: 2px solid green;
+    color: green; }
+
+.hide-task {
+  font-size: 0;
+  padding: 0;
+  margin: 0;
+  height: 0;
+  border: none; }
+  .hide-task input,
+  .hide-task .button-delete,
+  .hide-task .button-done,
+  .hide-task .button-finally-delete,
+  .hide-task .button-return {
+    margin: 0;
+    height: 0;
+    padding: 0;
+    opacity: 0;
+    padding: 0;
+    border: none;
+    display: none; }
+
+.button-finally-delete,
+.button-return {
+  display: none;
+  float: right; }
+
+.deleted {
+  background: red;
+  color: #FFF; }
+  .deleted .button-delete,
+  .deleted .button-done {
+    display: none; }
+  .deleted .button-finally-delete,
+  .deleted .button-return {
+    display: inline-block; }
+  .deleted input {
+    background: red; }
+
+.display-for-buttons-none {
+  display: none !important; }
+
+.display-for-buttons-inline {
+  display: inline-block !important; }
+
+.icon-buttons {
+  padding: 0;
+  text-align: justify;
+  /* Обнуляем для родителя*/
+  line-height: 0;
+  font-size: 1px;
+  /* 1px для Opera */
+  /* Лекарство для IE6-7*/
+  text-justify: newspaper;
+  zoom: 1;
+  /* Включаем в работу последнюю строку*/
+  text-align-last: justify; }
+  .icon-buttons li {
+    display: inline-block;
+    text-align: left;
+    /* Востанавливаем у потомков, кроме последнего*/
+    line-height: normal;
+    font-size: 14px;
+    /* Без него в Opera будет отступ под элементами */
+    vertical-align: top;
+    /* эмуляция inline-block для IE6-7*/ }
+  .icon-buttons:after {
+    width: 100%;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    content: '';
+    display: inline-block; }
+
+.out-label {
+  position: relative;
+  width: 90%; }
+
+.output input {
+  border: none;
+  width: 100%; }
+
+.pieTask {
+  border-top: 2px solid black;
+  position: relative;
+  display: block;
+  text-align: center;
+  margin-bottom: 30px; }
+
+.pieTask__button {
+  z-index: 1;
+  text-transform: uppercase;
+  background: #FFF;
+  color: #000;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  position: absolute;
+  right: 5px;
+  top: -75px;
+  font-size: 30px;
+  border: none;
+  padding: 10px;
+  font-weight: bold; }
+
+.pieCanvas {
+  max-width: 600px;
+  margin-bottom: 20px; }
+
+/*==========  Desktop First Method  ==========*/
+/* Large Devices, Wide Screens */
+/* Medium Devices, Desktops */
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  /*Disable Animation on Mobile Devices*/
+  .animated {
+    /*CSS transitions*/
+    -o-transition-property: none !important;
+    -moz-transition-property: none !important;
+    -ms-transition-property: none !important;
+    -webkit-transition-property: none !important;
+    transition-property: none !important;
+    /*CSS transforms*/
+    -o-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+    /*CSS animations*/
+    -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -o-animation: none !important;
+    -ms-animation: none !important;
+    animation: none !important; }
+  .output input,
+  .output label {
+    width: 80%; }
+  .main-header .left-side {
+    margin-right: -15px;
+    background: #000;
+    color: #FFF; }
+    .main-header .left-side p {
+      font-size: 1.875em;
+      line-height: 50px; }
+  .main-header .right-side {
+    margin-left: -15px; }
+    .main-header .right-side p {
+      font-size: 2.5em;
+      line-height: 100px; }
+  .main-header .date-text {
+    font-size: 1.25em;
+    margin-bottom: 20px; }
+  .pieTask__button {
+    z-index: 1;
+    text-transform: uppercase;
+    background: #FFF;
+    color: #000;
+    font-family: "Roboto", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    position: relative;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    border: none;
+    padding: 10px;
+    font-weight: bold; }
+  .pieCanvas {
+    margin: 0 auto;
+    display: block;
+    max-width: 400px;
+    max-height: 200px; } }
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .input-area input[name="what-to-do"] {
+    width: 100%; }
+  .input-area .add-to-do,
+  .input-area .hide-if-done,
+  .input-area .show-deleted,
+  .input-area .hide-deleted {
+    margin-top: 5px; }
+    .input-area .add-to-do svg,
+    .input-area .hide-if-done svg,
+    .input-area .show-deleted svg,
+    .input-area .hide-deleted svg {
+      width: 35px;
+      height: 35px; }
+  .output label {
+    width: 70%; }
+  .output input {
+    width: 100%; }
+  .pieCanvas {
+    margin: 0 auto;
+    display: block;
+    max-width: 300px;
+    max-height: 150px; } }
+
+/* Custom, iPhone Retina */
+/*==========  Mobile First Method  ==========*/
+/* Custom, iPhone Retina */
+/* Extra Small Devices, Phones */
+/* Small Devices, Tablets */
+/* Medium Devices, Desktops */
+/* Large Devices, Wide Screens */
+
+/*# sourceMappingURL=main.css.map */

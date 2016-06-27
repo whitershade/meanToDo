@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta charset="utf-8">
+  <title>ToDoList</title>
+  <meta name="description" content="">
+
+  <!-- build:css css/main.css -->
+  <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <!-- endbuild -->
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+</head>
+
+<body>
+
+  <!-- Здесь пишем код -->
+  <header class="main-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="left-side">
+            <p>Things</p>
+            <p>to do</p>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="right-side">
+            <p>Today</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div ng-app="toDoList">
+        <div ng-controller="MainController">
+          <!-- Display current date -->
+          <current-date></current-date>
+          <div ng-controller="PieCtrl" class="pieTask">
+            <canvas class="pieCanvas" tc-chartjs-pie chart-options="options" chart-data="data" ng-hide="!showCanvas"></canvas>
+            <button class="pieTask__button" ng-click="showHideClick()" ng-bind="hideShowButtonContent" ng-hide="pieTaskkButtonHide"></button>
+          </div>
+          <!-- Control buttons: input for new task, add new task, hide/show done task, show/hide deleted task -->
+          <control-buttons></control-buttons>
+          <!-- Tasks with: input to change task, toggle done/undone task, delete task, return task from deleted, finally delete task -->
+          <tasks-list></tasks-list>
+<!--
+          <div class="col-sm-6">
+            <h3><span class="fa fa-user"></span> Local</h3>
+            <p>
+              <strong>id</strong>:
+              <%= user._id %>
+            </p>
+          </div>
+-->
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+
+  <!--[if lt IE 9]>
+	<script src="libs/html5shiv/es5-shim.min.js"></script>
+	<script src="libs/html5shiv/html5shiv.min.js"></script>
+	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="libs/respond/respond.min.js"></script>
+	<![endif]-->
+
+  <!-- build:js js/main.js -->
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/Chart.js/dist/Chart.min.js"></script>
+  <script src="bower_components/tc-angular-chartjs/dist/tc-angular-chartjs.min.js"></script>
+  <script src="js/script-complied.js"></script>
+  <!-- endbuild -->
+
+</html>
