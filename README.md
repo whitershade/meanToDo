@@ -4,11 +4,11 @@
 
 2) $cd ./app/
 
-   $bower i
+     $bower i
 
 3) $cd ..
 
-  $node server.js
+    $node server.js
 
 4) go to the http://localhost:8080
 
