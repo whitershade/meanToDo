@@ -41,7 +41,7 @@ module.exports = function(app, passport) {
         // SIGNUP =================================
         // show the signup form
         app.get('/signup', function(req, res) {
-            res.render('signup.ejs', { message: req.flash('signupMessage') });
+            res.render('../app/auth/signup.ejs', { message: req.flash('signupMessage') });
         });
 
         // process the signup form
