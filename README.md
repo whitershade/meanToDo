@@ -1,10 +1,14 @@
 # Instruction
 
-1) ./ 'npm i'
+1) $npm i 
 
-2) ./app/ 'bower i'
+2) $cd ./app/
 
-3) ./ 'node server.js'
+   $bower i
+
+3) $cd ..
+
+  $node server.js
 
 4) go to the http://localhost:8080
 
