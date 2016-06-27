@@ -19,6 +19,7 @@
     "bootstrap": "^3.3.6",
     "bourbon": "~4.2.0",
     "normalize-css": "~3.0.3",
-    "tc-angular-chartjs": "^2.0.0"
+    "tc-angular-chartjs": "^2.0.0",
+    "font-awesome": "^4.6.3"
   }
 }
