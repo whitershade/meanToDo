@@ -1,12 +1,17 @@
 # Instruction
+1)   
 
-1) $npm i 
+      $npm i 
 
-2) $cd ./app/
+2)
 
-     $bower i
+    $cd ./app/
 
-3) $cd ..
+    $bower i
+
+3)
+
+    $cd ..
 
     $node server.js
 
